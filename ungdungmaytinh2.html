@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <h2>Caculator</h2>
+    <br>
+    <input id="one" type="number" name="number"> <input id="two" type="number" name="number">
+    <br><br>
+    Kết Quả:
+    <input id="result" type="number" name="number">
+    <br><br>
+    <input type="button" value="Addition(+)" onclick="cong();">
+    <input type="button" value="Subtraction(-)" onclick="tru();">
+    <input type="button" value="Multiplication(*)" onclick="nhan();">
+    <input type="button" value="Division(/)" onclick="chia();">
+    <script>
+        function cong() {
+            let one = parseInt(document.getElementById("one").value);
+            let two = parseInt(document.getElementById("two").value);
+            let result = (one + two);
+            document.getElementById("result").value=result;
+        }
+
+        function tru() {
+            let one = parseInt(document.getElementById("one").value);
+            let two = parseInt(document.getElementById("two").value);
+            let result = (one - two);
+            document.getElementById("result").value=result;
+        }
+
+        function nhan() {
+            let one = parseInt(document.getElementById("one").value);
+            let two = parseInt(document.getElementById("two").value);
+            let result = (one * two);
+            document.getElementById("result").value=result;
+        }
+
+        function chia() {
+            let one = parseInt(document.getElementById("one").value);
+            let two = parseInt(document.getElementById("two").value);
+            let result = (one / two);
+            document.getElementById("result").value=result;
+        }
+    </script>
+</form>
+
+</body>
+</html>
