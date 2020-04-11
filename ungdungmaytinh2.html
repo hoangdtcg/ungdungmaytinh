@@ -8,42 +8,65 @@
 <form>
     <h2>Caculator</h2>
     <br>
-    <input id="one" type="number" name="number"> <input id="two" type="number" name="number">
+    <input id="one" type="number" name="number">
+    <input id="two" type="number" name="number">
     <br><br>
     Kết Quả:
-    <input id="result" type="number" name="number">
+    <input id="result" type="text" name="number">
     <br><br>
-    <input type="button" value="Addition(+)" onclick="cong();">
-    <input type="button" value="Subtraction(-)" onclick="tru();">
-    <input type="button" value="Multiplication(*)" onclick="nhan();">
-    <input type="button" value="Division(/)" onclick="chia();">
+    <input type="button" value="Addition(+)" onclick="calculate('+');">
+    <input type="button" value="Subtraction(-)" onclick="calculate('-');">
+    <input type="button" value="Multiplication(*)" onclick="calculate('x');">
+    <input type="button" value="Division(/)" onclick="calculate('/');">
     <script>
-        function cong() {
-            let one = parseInt(document.getElementById("one").value);
-            let two = parseInt(document.getElementById("two").value);
-            let result = (one + two);
-            document.getElementById("result").value=result;
-        }
+        let one = document.getElementById("one");
+        let two = document.getElementById("two");
+        let resultDisplay = document.getElementById("result");
+        // function add() {
+        //     let result = parseFloat(one.value) + Number(two.value);
+        //     resultDisplay.value=result;
+        // }
+        //
+        // function sub() {
+        //     let result = parseFloat(one.value) - Number(two.value);
+        //     resultDisplay.value=result;
+        // }
+        //
+        // function multi() {
+        //     let result = parseFloat(one.value) * Number(two.value);
+        //     resultDisplay.value=result;
+        // }
+        //
+        // function division() {
+        //     let result = parseFloat(one.value) / Number(two.value);
+        //     // if(two.value == "0"){
+        //     //     resultDisplay.value="Syntax Error";
+        //     // }else {
+        //     //     resultDisplay.value=result;
+        //     // }
+        //     resultDisplay.value = (two.value == "0")?"Syntax Error":result;
+        //
+        // }
 
-        function tru() {
-            let one = parseInt(document.getElementById("one").value);
-            let two = parseInt(document.getElementById("two").value);
-            let result = (one - two);
-            document.getElementById("result").value=result;
-        }
-
-        function nhan() {
-            let one = parseInt(document.getElementById("one").value);
-            let two = parseInt(document.getElementById("two").value);
-            let result = (one * two);
-            document.getElementById("result").value=result;
-        }
-
-        function chia() {
-            let one = parseInt(document.getElementById("one").value);
-            let two = parseInt(document.getElementById("two").value);
-            let result = (one / two);
-            document.getElementById("result").value=result;
+        function calculate(opt) {
+            let result = 0;
+            //cal
+            switch (opt) {
+                case "+":
+                    result = parseFloat(one.value) + Number(two.value);
+                    break;
+                case "-":
+                    result = parseFloat(one.value) - Number(two.value);
+                    break;
+                case "x":
+                    result = parseFloat(one.value) * Number(two.value);
+                    break;
+                case "/":
+                    result = parseFloat(one.value) / Number(two.value);
+                    break;
+            }
+            //show result
+            resultDisplay.value=result;
         }
     </script>
 </form>
